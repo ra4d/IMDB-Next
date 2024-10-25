@@ -2,6 +2,7 @@ import Menuitems from "./Menuitems";
 import { FaHome } from "react-icons/fa";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Link from "next/link";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 
 export default function Header() {
@@ -11,10 +12,14 @@ export default function Header() {
 					<Menuitems title={"Home"} address={'/'} Icon={FaHome}/> 
 					<Menuitems title={"About"} address={'/about'} Icon={BsFillInfoCircleFill}/> 
         </div>
-				<Link href={'/'} className={`flex items-center gap-1`}>
+				<div className={`flex items-center gap-4`}>
+					<DarkModeSwitch />
+					<Link href={'/'} className={`flex items-center gap-1`}>
 					<span className={`bg-amber-500 py-1 px-2 text-2xl font-bold rounded-lg`}>IMDB</span>
 					<span className={`text-xl hidden sm:inline`}>clone</span>
 				</Link>
+				</div>
+				
     </div>
   )
 }
